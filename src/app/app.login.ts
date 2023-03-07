@@ -4,8 +4,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './app.login.html',
-  styleUrls: ['']
+  templateUrl: './app.login.html'
 })
 export class AppLoginComponent {
   title = 'front-app';

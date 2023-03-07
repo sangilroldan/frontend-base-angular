@@ -3,8 +3,7 @@ import { Auth } from 'aws-amplify';
 
 @Component({
   selector: 'app-dashboard ',
-  templateUrl: './app.dashboard.html',
-  styleUrls: ['']
+  templateUrl: './app.dashboard.html'
 })
 export class AppDashboardComponent {
   user = 'front-app';
