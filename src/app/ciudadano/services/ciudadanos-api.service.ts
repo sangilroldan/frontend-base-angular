@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CiudadanoResponseModel } from '../models/ciudadano.model';
-import { Subject, tap } from 'rxjs';
+import { Subject } from 'rxjs';
 import { enviroment } from '../../../enviroment/enviroment';
 
 @Injectable({
@@ -10,7 +10,7 @@ import { enviroment } from '../../../enviroment/enviroment';
 })
 export class CiudadanosApiService {
 
-  private ciudadanosURL = enviroment.URL_CIUDADANOS;
+  private ciudadanosURL = enviroment.URL_CIUDADANOS + '/ciudadano';
 
   private _refreshrequired = new Subject<void>();
 
@@ -18,12 +18,7 @@ export class CiudadanosApiService {
     return this._refreshrequired;
   }
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
-
   constructor(private http: HttpClient) { }
-
 
   getCiudadanos(): Observable<CiudadanoResponseModel> {
     return this.http.get<CiudadanoResponseModel>(this.ciudadanosURL);

@@ -12,21 +12,30 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CitasListComponent } from './cita/components/citas-list/citas-list.component';
 import { CitaFormComponent } from './cita/components/cita-form/cita-form.component';
 
+import { AmplifyAngularModule, AmplifyService } from 'aws-amplify-angular';
+import { HttpInterceptorProviders } from './core/http-interceptor-providers';
+import { AppDashboardComponent } from './app.dashboard';
+import { AppLoginComponent } from './app.login';
+
 @NgModule({
   declarations: [
     AppComponent,
-    CiudadanosListComponent,    
-    CiudadanoFormComponent, CitasListComponent, CitaFormComponent   
+    AppDashboardComponent,
+    AppLoginComponent,
+
+    CiudadanosListComponent,
+    CiudadanoFormComponent, CitasListComponent, CitaFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AmplifyAngularModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AmplifyService, HttpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

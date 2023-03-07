@@ -29,7 +29,4 @@ export class CiudadanosListComponent implements OnInit {
         this.ciudadanosdata = response._list;
       });
   }
-
-
-
 }
